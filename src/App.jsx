@@ -7,10 +7,10 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
+    <div className="flex flex-col min-h-screen">
       <BrowserRouter>
         <Navbar />
-        <div className="container">
+        <div className="flex-1">
           <Routes>
             <Route path="/" element={<Home />}/>
             <Route path="/about" element={<About />}/>
