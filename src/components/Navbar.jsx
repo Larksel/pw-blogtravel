@@ -15,6 +15,10 @@ const navButtons = [
     link: '/register',
   },
   {
+    text: 'Novo Produto',
+    link: '/cadastroProduto',
+  },
+  {
     text: 'Sobre',
     link: '/about',
   },
