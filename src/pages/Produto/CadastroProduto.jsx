@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
 export default function CadastroProduto() {
+  const [displayName, setDisplayName]=useState(''); 
+  const [displayTipo, setTipo]  = useState(''); 
+  const [displayMarca, setMarca]  = useState(''); 
+  const [displayPreco, setPreco]  = useState(0); 
+  const [error, setError] = useState(''); 
+
   return (
     <div>
       <h1>Cadastrar produto</h1>
