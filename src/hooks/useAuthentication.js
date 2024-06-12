@@ -6,7 +6,7 @@ import {
   updateProfile,
   signOut,
 } from 'firebase/auth';
-import {db} from '../firebase/config';
+import { db } from '../firebase/config';
 
 export const useAuthentication = () => {
   const [error, setError] = useState(null);
@@ -22,7 +22,7 @@ export const useAuthentication = () => {
 
   const createUser = async (data) => {
     checkIfIsCancelled();
-    setLoading(true);
+    setLoading((l) => !l);
     setError(null);
 
     try {
@@ -49,9 +49,9 @@ export const useAuthentication = () => {
       }
 
       setError(systemErrorMessage);
+    } finally {
+      setLoading((l) => !l);
     }
-
-    setLoading(false);
   };
 
   useEffect(() => {
