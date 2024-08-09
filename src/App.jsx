@@ -8,22 +8,26 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import CadastroProduto from './pages/Produto/CadastroProduto';
 
+import { AuthProvider } from './context/AuthContext';
+
 function App() {
   return (
     <div className='flex flex-col min-h-screen'>
-      <BrowserRouter>
-        <Navbar />
-        <div className='flex-1'>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/register' element={<Register />} />
-            <Route path='/cadastroProduto' element={<CadastroProduto />} />
-          </Routes>
-        </div>
-        <Footer />
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Navbar />
+          <div className='flex-1'>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/about' element={<About />} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/register' element={<Register />} />
+              <Route path='/cadastroProduto' element={<CadastroProduto />} />
+            </Routes>
+          </div>
+          <Footer />
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }

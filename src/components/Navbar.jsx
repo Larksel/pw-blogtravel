@@ -24,9 +24,9 @@ const navButtons = [
   },
 ];
 
-const Navbar = () => {
+export default function Navbar() {
   return (
-    <nav className='flex justify-between items-center px-2 shadow-md'>
+    <nav className='flex justify-between items-center px-2 shadow-md h-8'>
       <NavLink to='/' className='text-2xl no-underline text-black uppercase'>
         BLOG<span className='font-black'>TRAVELS</span>
       </NavLink>
@@ -50,5 +50,3 @@ const Navbar = () => {
     </nav>
   );
 };
-
-export default Navbar;
